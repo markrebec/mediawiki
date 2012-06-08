@@ -1,2 +1,1 @@
-require File.dirname(__FILE__) + '/lib/mediawiki'
-require File.dirname(__FILE__) + '/lib/wikipedia'
+require File.join(File.expand_path(File.dirname(__FILE__)), "lib", "mediawiki")
