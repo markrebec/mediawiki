@@ -7,20 +7,20 @@ class for Wikipedia.
 == Examples
 
 wiki = MediaWiki.new(:domain => 'en.wikipedia.org')
+=> #<MediaWiki::MediaWiki>
+
 page = wiki.find('Main Page')
+=> #<MediaWiki::Page>
 
 There is also a pre-defined class for Wikipedia
 
 page = Wikipedia.find('Main Page')
-
-=> #<MediaWiki:Page>
+=> #<MediaWiki::Page>
 
 page.title 
-
-=> 'Getting Things Done'
+=> 'Main Page'
 
 page.content
-
 => # all the wiki markup appears here...
 
 == Configuration
