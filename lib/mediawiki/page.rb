@@ -5,6 +5,10 @@ module MediaWiki
       @data = JSON::load(json)
     end
     
+    def raw_data
+      @data
+    end
+
     def content
       @data['query']['pages'].values.first['revisions'].first.values.first
     end
