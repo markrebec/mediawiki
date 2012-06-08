@@ -6,9 +6,8 @@ module MediaWiki
       options = {
         :protocol => 'http',
         :domain => 'en.wikipedia.org',
-        :path => 'w/api.php',
-        :action => 'query',
-        :properties => 'content'
+        :port => 80,
+        :path => 'w/api.php'
       }.merge(options)
       @client = Client.new(options)
     end
