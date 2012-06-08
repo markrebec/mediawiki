@@ -14,6 +14,7 @@ page = wiki.find('Main Page')
 
 There is also a pre-defined class for Wikipedia
 
+require 'wikipedia'
 page = Wikipedia.find('Main Page')
 => #<MediaWiki::Page>
 
