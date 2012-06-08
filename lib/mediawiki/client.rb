@@ -12,26 +12,22 @@ module MediaWiki
     end
 
     def find_by_title(title)
-      page = Page.new(request_page(title, {:query => "titles"}))
+      page = Page.new(url_for(title, {:query => "titles"}).read)
       while follow_redirects and page.redirect?
-        page = Page.new(request_page(page.redirect_title, {:query => "titles"}))
+        page = Page.new(url_for(page.redirect_title, {:query => "titles"}).read)
       end
       page
     end
 
     def find_by_page_id(page_id)
-      Page.new(request_page(page_id, {:query => "pageids"}))
-    end
-    
-    def request_page(page, opts={})
-      URI.parse(url_for(page, opts)).read
+      Page.new(url_for(page_id, {:query => "pageids"}).read)
     end
     
     protected 
       
     def url_for(page, opts={})
       opts = {:query => "titles"}.merge(opts)
-      "#{self.options[:protocol]}://#{self.options[:domain]}/#{self.options[:path]}?action=#{self.options[:action]}&prop=info|revisions|images|imageinfo&#{opts[:query]}=#{URI.encode(page.to_s)}&rvprop=#{[self.options[:properties]].flatten.join("|")}&format=json"
+      URI.parse("#{self.options[:protocol]}://#{self.options[:domain]}/#{self.options[:path]}?action=#{self.options[:action]}&prop=#{URI.encode("info|revisions|images|imageinfo")}&#{opts[:query]}=#{URI.encode(page.to_s)}&rvprop=#{URI.encode([self.options[:properties]].flatten.join("|"))}&format=json")
     end
   end
 end
