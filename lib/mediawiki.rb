@@ -17,4 +17,8 @@ module MediaWiki
       @client.find(page)
     end
   end
+
+  def self.new(options={})
+    MediaWiki.new(options)
+  end
 end

@@ -31,7 +31,7 @@ module MediaWiki
       
     def url_for(page, opts={})
       opts = {:query => "titles"}.merge(opts)
-      "#{self.options[:protocol]}://#{self.options[:domain]}/#{self.options[:path]}?action=#{self.options[:action]}&prop=revisions&#{opts[:query]}=#{URI.encode(page)}&rvprop=#{[self.options[:properties]].flatten.join("|")}&format=json"
+      "#{self.options[:protocol]}://#{self.options[:domain]}/#{self.options[:path]}?action=#{self.options[:action]}&prop=revisions&#{opts[:query]}=#{URI.encode(page.to_s)}&rvprop=#{[self.options[:properties]].flatten.join("|")}&format=json"
     end
   end
 end

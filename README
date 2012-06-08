@@ -6,8 +6,12 @@ class for Wikipedia.
 
 == Examples
 
-wiki = MediaWiki::MediaWiki.new(:domain => 'en.wikipedia.org')
-page = wiki.find('Getting Things Done')
+wiki = MediaWiki.new(:domain => 'en.wikipedia.org')
+page = wiki.find('Main Page')
+
+There is also a pre-defined class for Wikipedia
+
+page = Wikipedia.find('Main Page')
 
 => #<MediaWiki:Page>
 
