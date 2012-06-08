@@ -1,1 +1,1 @@
-require File.dirname(__FILE__) + '/lib/wikipedia'
+require File.dirname(__FILE__) + '/lib/mediawiki'
