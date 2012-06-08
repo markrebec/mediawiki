@@ -1,6 +1,6 @@
 == MediaWiki
 
-Provideds interaction with MediaWiki APIs, and provides a defailt
+Provides interaction with MediaWiki APIs, and provides a defailt
 class for Wikipedia.
 
 
