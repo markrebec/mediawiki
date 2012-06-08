@@ -2,16 +2,16 @@
 lib = File.expand_path('../lib/', __FILE__)
 $:.unshift lib unless $:.include?(lib)
 
-require 'wikipedia/version'
+require 'mediawiki/version'
 
 spec = Gem::Specification.new do |s|
-  s.name = "wikipedia"
-  s.version = Wikipedia::VERSION
-  s.author = "Cyril Ucron David"
-  s.email = "cyx.ucron@gmail.com"
-  s.homepage = "http://code.google.com/p/wikipedia-client/"
+  s.name = "mediawiki"
+  s.version = MediaWiki::VERSION
+  s.author = "Mark Rebec"
+  s.email = "mark@markrebec.com"
+  s.homepage = "http://github.com/markrebec/mediawiki"
   s.platform = Gem::Platform::RUBY
-  s.summary = "Allows you to get wikipedia content through their API."
+  s.summary = "Provides interaction with MediaWiki APIs."
   s.files = `git ls-files`.split("\n")
   s.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_path = "lib"
