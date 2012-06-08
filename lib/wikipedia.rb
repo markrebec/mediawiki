@@ -1,7 +1,6 @@
 Dir[File.dirname(__FILE__) + '/wikipedia/**/*.rb'].each { |f| require f }
 
 module Wikipedia
-  VERSION = "0.1.0"
   # Examples : 
   # page = Wikipedia.find('Rails') 
   # => #<Wikipedia:0x123102>

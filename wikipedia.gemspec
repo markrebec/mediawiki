@@ -2,6 +2,8 @@
 lib = File.expand_path('../lib/', __FILE__)
 $:.unshift lib unless $:.include?(lib)
 
+require 'wikicloth/version'
+
 spec = Gem::Specification.new do |s|
   s.name = "wikipedia"
   s.version = Wikipedia::VERSION
